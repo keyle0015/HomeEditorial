@@ -45,10 +45,7 @@ export const createPedido2 = async (req, res) => {
     try{
         var montoTotal = 0;
         var ivaTotal = 0;
-        // const {subtotal, iva, total, fecha, idCliente} = req.body;
         const {idCliente} = req.body;
-        // const [rows] = await pool.query('INSERT INTO pedido (subtotal, iva, total, fecha, idCliente) VALUES (?, ?, ?, ?, ?)', 
-        //                 [subtotal, iva, total, fecha, idCliente]);
         const [row_pedido] = await pool.query('INSERT INTO pedido (idCliente) VALUES (?)', [idCliente]);
         for(var key in carrito){
             var value = carrito[key]
@@ -57,24 +54,19 @@ export const createPedido2 = async (req, res) => {
         }
         for (var key in carrito){
             var orden = carrito[key];
-            console.log(orden)
             const {idProducto, precioUni, cantidad, monto, ivaProd} = orden;
-            const [row_orden] = await pool.query('INSERT INTO orden (idPedido, idProducto, precioUni, cantidad, monto, iva) VALUES (?, ?, ?, ?, ?, ?',
+            const [row_orden] = await pool.query('INSERT INTO orden (idPedido, idProducto, precioUni, cantidad, monto, iva) VALUES (?, ?, ?, ?, ?, ?)',
                                 [row_pedido.insertId, idProducto, precioUni, cantidad, monto, ivaProd]);
-            console.log('A ver si llega aquí mi pa')
             montoTotal += monto;
             ivaTotal += ivaProd;
         }
-        var date = new Date()
-        const [row_pedido_final] = await pool.query('UPDATE pedido SET subtotal = ?, iva = ?, total = ?, fecha = ? WHERE idProducto = ?',
-                                    [montoTotal, ivaTotal, (montoTotal+ivaTotal), date, row_pedido.insertId]) ;
+        var date = new Date();
+        var total = montoTotal + ivaTotal;
+        const [row_pedido_final] = await pool.query('UPDATE pedido SET subtotal = ?, iva = ?, total = ?, fecha = ? WHERE idPedido = ?',
+                                                    [montoTotal, ivaTotal, total, date, row_pedido.insertId]);
         res.send({
-            id: rows.insertId,
-            subtotal,
-            iva,
-            total,
-            fecha,
-            idCliente
+            Pedido: row_pedido.insertId,
+            message: 'Pedido realizado con éxito.'
         });
     }catch (error){
         return res.status(500).json({
