@@ -12,7 +12,7 @@ export const getClientes = async (req, res) => {
             message: 'Algo salió mal'
         })
     }
-};
+}
 
 export const getCliente = async (req, res) => {
     try{

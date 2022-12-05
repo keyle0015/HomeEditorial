@@ -15,8 +15,7 @@ const carrito = [
         monto: 0,
         ivaProd: 0
     }
-];
-
+]
 export const createPedido = async (req, res) => {
     try{
         const {subtotal, iva, total, fecha, idCliente} = req.body;
@@ -41,6 +40,8 @@ export const createPedido = async (req, res) => {
         })
     }
 }
+
+//
 export const createPedido2 = async (req, res) => {
     try{
         var montoTotal = 0;
