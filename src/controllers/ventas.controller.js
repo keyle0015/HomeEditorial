@@ -7,7 +7,7 @@ export const createVenta = async (req, res) => {
         const [row_venta] = await pool.query('INSERT INTO venta (fecha, movimiento, idMetodoPago, idPedido) VALUES (?, ?, ?, ?)',
                                 [fecha, movimiento, idMetodoPago,idPedido]);
         res.send({
-            message: 'venta realizada con éxito.'
+            message: 'Venta realizada con éxito.'
         })
     }catch (error){
         return res.status(500).json({
