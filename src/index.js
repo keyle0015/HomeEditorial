@@ -7,6 +7,8 @@ import ventasRoutes from './routes/ventas.routes.js'
 import enviosRoutes from './routes/envios.router.js'
 import pingRoute from './routes/ping.routes.js'
 
+import {PORT} from './config.js'
+
 const app = express()
 
 app.use(express.json())
@@ -26,4 +28,4 @@ app.use((req, res, next) => {
 })
 
 app.listen(3000)
-console.log("Server running in port 3000")
+console.log("Server running on port", PORT)
