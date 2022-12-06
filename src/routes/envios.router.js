@@ -5,7 +5,7 @@ const router = Router();
 
 router.get('/solicTrans/:id', solicTrans);
 
-router.post('/estado_transporte', estTransp);
+router.post('/envios', estTransp);
 
 router.get('/envios', getEnvios)
 

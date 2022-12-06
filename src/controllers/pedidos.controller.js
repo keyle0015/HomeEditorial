@@ -1,17 +1,17 @@
 import {pool} from "../db.js"
 
 const carrito = [
-    // {
-    //     idProducto: 1,
-    //     precioUni: 250,
-    //     cantidad: 1,
-    //     monto: 0,
-    //     ivaProd: 0
-    // },
+    {   
+        idProducto: 3,
+        precioUni: 250,
+        cantidad: 5,
+        monto: 0,
+        ivaProd: 0
+    },
     {
         idProducto: 2,
         precioUni: 200,
-        cantidad: 3,
+        cantidad: 1,
         monto: 0,
         ivaProd: 0
     }
