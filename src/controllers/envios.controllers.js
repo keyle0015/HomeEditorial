@@ -1,5 +1,20 @@
 import {pool} from "../db.js"
 
+
+export const getEnvios = async (req, res) => {
+    try{
+        const [rows] = await pool.query('SELECT * FROM envio')
+        if (rows.length <= 0) return res.status(404).json({
+            message: 'No se encontró ningún envío'
+        })
+        res.json(rows)
+    }catch (error){
+        return res.status(500).json({
+            message: 'Algo salió mal'
+        })
+    }
+}
+
 export const solicTrans = async (req, res) => {
     try{
         const date = new Date();
