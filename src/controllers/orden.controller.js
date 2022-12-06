@@ -4,7 +4,7 @@ export const getOrden = async (req, res) => {
     try{
         const [rows] = await pool.query('SELECT * FROM orden')
         if (rows.length <= 0) return res.status(404).json({
-            message: 'No se encontró ningún pedido'
+            message: 'No se encontró ninguna orden'
         })
         res.json(rows)
     }catch (error){
