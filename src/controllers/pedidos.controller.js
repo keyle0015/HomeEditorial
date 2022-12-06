@@ -16,6 +16,35 @@ const carrito = [
         ivaProd: 0
     }
 ]
+
+export const getPedidos = async (req, res) => {
+    try{
+        const [rows] = await pool.query('SELECT * FROM pedido')
+        if (rows.length <= 0) return res.status(404).json({
+            message: 'No se encontró ningún pedido'
+        })
+        res.json(rows)
+    }catch (error){
+        return res.status(500).json({
+            message: 'Algo salió mal'
+        })
+    }
+}
+
+export const getPedido = async (req, res) => {
+    try{
+        const [rows] = await pool.query('SELECT * FROM pedido WHERE idPedido = ?', req.params.id)
+        if (rows.length <= 0) return res.status(404).json({
+            message: 'No se encontró ningún pedido'
+        })
+        res.json(rows)
+    }catch (error){
+        return res.status(500).json({
+            message: 'Algo salió mal'
+        })
+    }
+}
+
 export const createPedido = async (req, res) => {
     try{
         const {subtotal, iva, total, fecha, idCliente} = req.body;

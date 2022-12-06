@@ -1,12 +1,12 @@
 import {Router} from 'express';
 import { createPedido, createPedido_VO } from '../controllers/pedidos.controller.js';
-import { createPedido2 } from '../controllers/pedidos.controller.js';
+import { createPedido2, getPedidos, getPedido } from '../controllers/pedidos.controller.js';
 
 const router = Router()
 
-router.get('/pedidos',)
+router.get('/pedidos', getPedidos)
 
-router.get('/pedidos/:id')
+router.get('/pedidos/:id', getPedido)
 
 router.post('/pedidos', createPedido)
 
