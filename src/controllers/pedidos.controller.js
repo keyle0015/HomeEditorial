@@ -110,7 +110,7 @@ export const createPedido_VO = async (req, res) => {
         var ivaProd = 0;
         var ivaTotal = 0;
         //const {idCliente} = req.body;
-        const [row_pedido] = await pool.query('INSERT INTO pedido (idCliente) VALUES (4)');
+        const [row_pedido] = await pool.query('INSERT INTO pedido (idCliente) VALUES (3)');
         //insertar productos en orden
         const {NoOrd,MontoTotal,NoArt,CantidadProd, NoProd, NomProd, DescProd, NoSerieProd, PrecioProd} = req.body;
         ivaProd = PrecioProd * (16/100);
