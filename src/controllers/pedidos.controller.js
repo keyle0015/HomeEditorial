@@ -107,17 +107,24 @@ export const createPedido2 = async (req, res) => {
 
 export const createPedido_VO = async (req, res) => {
     try{
-        var date = new Date()
-        const {noVta, montoTotal, noArt, cantidadProd, noProd, nomProd, descProd, noSerieProd, precioProd} = req.body;
-        const [rows] = await pool.query('INSERT INTO pedido (subtotal, iva, total, fecha, idCliente) VALUES (?, ?, ?, ?, ?)', 
-                        ["", "", montoTotal, date, 4]);
+        var ivaProd = 0;
+        var ivaTotal = 0;
+        //const {idCliente} = req.body;
+        const [row_pedido] = await pool.query('INSERT INTO pedido (idCliente) VALUES (4)');
+        //insertar productos en orden
+        const {NoOrd,MontoTotal,NoArt,CantidadProd, NoProd, NomProd, DescProd, NoSerieProd, PrecioProd} = req.body;
+        ivaProd = PrecioProd * (16/100);
+        const [row_orden] = await pool.query('INSERT INTO orden (idPedido, idProducto, precioUni, cantidad, monto, iva) VALUES (?, ?, ?, ?, ?, ?)',
+                                [row_pedido.insertId, NoProd, PrecioProd, CantidadProd, MontoTotal, ivaProd]);
+        ivaTotal += ivaProd;
+        //actualizar pedidos con fecha y total
+        var date = new Date();
+        var total = MontoTotal + ivaTotal;
+        const [row_pedido_final] = await pool.query('UPDATE pedido SET subtotal = ?, iva = ?, total = ?, fecha = ? WHERE idPedido = ?',
+                                                    [MontoTotal, ivaTotal, total, date, row_pedido.insertId]);
         res.send({
-            id: rows.insertId
-            // subtotal,
-            // iva,
-            // montoTotal,
-            // fecha,
-            // idCliente
+            Pedido: row_pedido.insertId,
+            message: 'Pedido realizado con éxito.'
         });
     }catch (error){
         return res.status(500).json({
