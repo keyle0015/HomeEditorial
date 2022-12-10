@@ -125,7 +125,6 @@ export const createPedido_VO = async (req, res) => {
             var orden = carrito[key];
             const {MontoTotal,CantidadProd, NoProd,PrecioProd} = orden
             ivaProd= orden['MontoTotal'] * (16/100)
-            console.log(carrito[key]);
             const [row_orden] = await pool.query('INSERT INTO orden (idPedido, idProducto, precioUni, cantidad, monto, iva) VALUES (?, ?, ?, ?, ?, ?)',
                                     [row_pedido.insertId,NoProd, PrecioProd, CantidadProd, MontoTotal, ivaProd]);
             montoTotal += MontoTotal;
