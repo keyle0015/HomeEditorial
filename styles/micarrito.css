@@ -1,0 +1,76 @@
+@import "pedidos.css";
+
+.cover{
+    width: auto;
+    max-width: 20%;
+    height: auto;
+    max-height: 100%;
+}
+
+#mainCont {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cant {
+    width: 187px;
+}
+
+.contGran {
+    width: 65%;
+}
+
+button {
+    background-color: var(--listhead);
+}
+
+td {
+    vertical-align: middle;
+}
+
+.multi {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    height: 92px;
+}
+
+.qButton, input[type=number]{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--bordercolor);
+}
+
+.side {
+    border: 2px solid var(--bordercolor);
+    float: right;
+    height: 512px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.producto,
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.side img {
+    margin: 10px auto;
+}
+
+.side button {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--bordercolor);
+}
+
+.foot {
+    display: flex;
+    flex-direction: column;
+}

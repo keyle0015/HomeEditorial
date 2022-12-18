@@ -1,0 +1,29 @@
+@import "catalogo.css";
+@import "mispagos.css";
+
+.catalogo.cuenta {
+    display: none;
+}
+
+.brl-butt.cuen {
+    width: 40px;
+    border: none;
+}
+
+.opText.info {
+    border-bottom: 1px solid var(--listhead);
+}
+
+.contenido.dir {
+    max-width: 40%;
+}
+
+.icon {
+    width: 17%;
+    border: 10px solid var(--bordercolor);
+    border-radius: 113px;
+}
+
+.mainInfo {
+    display: flex;
+}

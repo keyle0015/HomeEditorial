@@ -1,0 +1,96 @@
+@import "/styles/style.css";
+
+/*Catalogo*/
+.sideBox {
+    width: 30%;
+}
+
+#cat {
+    border: 1px solid var(--bordercolor);
+}
+
+#cat ul {
+    border-top: 1px solid var(--bordercolor);
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+#cat ul li {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#cat ul li:hover {
+    background-color: var(--listhover);
+}
+
+.catalogo {
+    width: 70%;
+    height: 500px;
+}
+
+#pagser {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    top: 0px;
+}
+
+#libros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.libro {
+    float: left;
+    width: auto;
+    max-width: 29.95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
+    margin: 10px;
+    text-align: center;
+}
+
+
+
+.libro img {
+    width: auto;
+    max-width: 200px;
+    margin: 5px;
+}
+
+.libro button {
+    border: none;
+    background-color: darkgreen;
+    color: var(--w);
+    padding: 0px 20px;
+}
+
+.cover {
+    height: 308px;
+}
+
+@media only screen and (max-width: 800px) {
+    .libro {
+        max-width: 45%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .libro {
+        max-width: 100%;
+    }
+
+    #libros {
+        justify-content: center;
+    }
+}

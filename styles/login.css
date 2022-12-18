@@ -1,0 +1,26 @@
+@import "style.css";
+
+.boxCont {
+    margin: 10px auto;
+    width: 440px;
+    display: none;
+}
+
+main {
+    justify-content: center;
+}
+
+.mainBox{
+    margin-top: 20px;
+}
+
+
+.modal-content,
+.modal-body,
+.modal-footer {
+    margin: 10px;
+}
+
+.modal-footer {
+    justify-content: space-between !important;
+}

@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import {getClientes, getCliente, createClientes} from '../controllers/clientes.controllers.js'
 import {updateClientes, deleteClientes} from '../controllers/clientes.controllers.js'
+import { getLogin } from '../controllers/login.controllers.js';
 
 const router = Router()
 
@@ -13,5 +14,8 @@ router.post('/clientes', createClientes);
 router.patch('/clientes', updateClientes);
 
 router.delete('/clientes', deleteClientes);
+
+router.get('/login', getLogin);
+
 
 export default router

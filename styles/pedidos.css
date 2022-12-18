@@ -1,0 +1,44 @@
+@import "style.css";
+
+#mainCont {
+    flex-wrap: wrap;
+    width: 85%;
+}
+
+.table {
+    border: 2px solid var(--bordercolor) !important;
+}
+
+thead {
+    background-color: var(--listhead);
+}
+
+thead th,
+tbody th,
+tbody td {
+    border-style: solid;
+    border-color: var(--bordercolor);
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+
+tr {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.envio {
+    display: flex;
+    background-color: #eeebe2;
+    width: 90%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enTe {
+    width: 30%;
+    margin-right: 10%;
+}

@@ -1,0 +1,72 @@
+@import "micarrito.css";
+
+:root {
+    --margin: 10px;
+}
+
+.opEnvio, .envioNav {
+    border: 2px solid var(--bordercolor);
+    margin: var(--margin) 0px;
+}
+
+.envioNav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+}
+
+.envioNav li {
+    width: 34%;
+}
+
+.envioNav li:hover {
+    background-color: var(--listhover);
+}
+
+.envioNav p {
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    border-right: 1px solid var(--bordercolor);
+}
+
+.opText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido {
+    padding: var(--margin);
+}
+
+.opEnvio {
+    padding: 21px;
+    display: none;
+}
+
+select {
+    border-radius: 5px;
+    border-color: var(--bordercolor);
+    margin: var(--margin) !important;
+}
+
+.contenido button {
+    margin: var(--margin);
+    border-radius: 5px;
+    border: 1px solid var(--bordercolor);
+    float: right;
+}
+
+.active {
+    background-color: var(--listhover);
+}
+
+.link {
+    color: rgb(71, 71, 254);
+    text-decoration: underline;
+}
+
+input.cort.form-control {
+    width: 22%;
+}

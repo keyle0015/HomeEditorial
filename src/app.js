@@ -1,4 +1,4 @@
-import express from "express"
+import express from 'express'
 import clientesRoutes from './routes/clientes.routes.js'
 import productosRoutes from './routes/productos.routers.js'
 import metodopagoRoutes from './routes/metodopago.routes.js'

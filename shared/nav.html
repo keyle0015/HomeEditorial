@@ -1,0 +1,45 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" title="HOME Editorial">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="navIcon" src="/img/icon.svg" height="20" onclick='location.href="/index.html"'>
+            <b onclick='location.href="/index.html"'> HOME</b>
+        </a>
+        <div class="riNav">
+            <form class="d-flex">
+                <input id="searchBox" class="form-control me-2" type="search" placeholder="Buscar por nombre, autor"
+                    aria-label="Search">
+                <button id="searchBut" class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <button onclick='location.href="/contents/micarrito.html"' class="brl-butt"><img src="/img/cart.png"alt="" width="30px"></button>
+            <a class="login" href="/contents/login.html">Iniciar Sesión</a>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div class="collapse" id="navbarToggleExternalContent">
+    <p class="menTi">Menu</p>
+    <ul class="menLi">
+        <li type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" onclick='location.href="/contents/catalogo.html"'>
+            <a>Catalogo</a>
+        </li>
+        <li type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" onclick='location.href="/contents/pedidos.html"'>
+            <a>Mis pedidos</a>
+        </li>
+        <li type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" onclick='location.href="/contents/cuenta.html"'>
+            <a>Mi cuenta</a>
+        </li>
+        <li type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent">
+            <a>Salir</a>
+        </li>
+    </ul>
+</div>
