@@ -26,8 +26,8 @@ formLogCliente.addEventListener('submit', function(e){
 	var email = datos.get('email')
 
 	fetch('http://localhost:3000/api/login',{
-		mode: "no-cors",
-		method: 'POST',
+		mode: "cors",
+		method: 'GET',
 		body: datos
 	})
 })
