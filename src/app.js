@@ -58,6 +58,12 @@ app.get('/micuenta', function(req, response) {
 	response.sendFile(path.join(__dirname + '/contents/cuenta.html'));
 });
 
+// Pedidos
+app.get('/mispedidos', function (req, response) {
+    // Render login template
+    response.sendFile(path.join(__dirname + '/contents/pedidos.html'));
+});
+
 // Carrito
 app.get('/micarrito', function(req, response) {
 	// Render login template
